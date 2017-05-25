@@ -1,0 +1,29 @@
+{
+  "name": "youtube-api-upload",
+  "version": "1.0.0",
+  "description": "Youtube v3 API",
+  "main": "index.js",
+  "scripts": {
+    "test": "node samples/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacobHsu/youtube-api-upload.git"
+  },
+  "author": "Jacob Hsu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JacobHsu/youtube-api-upload/issues"
+  },
+  "homepage": "https://github.com/JacobHsu/youtube-api-upload#readme",
+  "dependencies": {
+    "googleapis": "^19.0.0"
+  },
+  "devDependencies": {
+    "bug-killer": "^4.4.4",
+    "lien": "^3.0.1",
+    "opn": "^5.0.0",
+    "pretty-bytes": "^4.0.2",
+    "r-json": "^1.2.7"
+  }
+}
