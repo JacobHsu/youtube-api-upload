@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Uploader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+</head>
+<body>
+    
+  <div class="container">
+
+    <div class="row">
+   
+      <div class="col s12 m6">
+
+        <div class="uploadBox">
+          <h3>Video Uploader</h3>
+
+          <div class="first-content row">
+            <div class="file-field input-field">
+              <div class="btn attach-file">
+                <span><i class="material-icons">attach_file</i></span>
+                <input id="fileBox" type="file" accept="video/mp4,video/x-m4v,video/*">
+              </div>
+              <div class="file-path-wrapper">
+                <input id="fileBoxLabel" class="file-path validate" type="text" placeholder="Upload a video file">
+              </div>
+            </div>
+          </div><!-- end first-content -->
+
+
+          <div class="row">
+
+            <div class="input-field col s12">
+              <i class="material-icons prefix">text_fields</i>
+              <input id="title" id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">Title </label>
+            </div>
+
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
+              <textarea id="description" class="materialize-textarea validate"></textarea>
+              <label for="description">Description</label>
+            </div>
+
+          </div><!-- end row -->
+
+          <div class="row">
+            
+            <div class="col s6">
+              <label>Privacy Settings</label>
+              <select id="privacyStatus">
+                <option value="private">Private</option>
+                <option value="public">Public</option>
+              </select>
+            </div>
+
+            <div class="col s6 upload-container">
+             <button class="btn waves-effect waves-light publish" id='uploadButton' type="submit" name="action">Upload
+              <i class="material-icons right">publish</i>
+              </button>
+            </div>
+
+          </div><!-- end row -->
+
+        </div><!-- end uploadBox -->
+        
+      </div><!-- end col cols12 m6 -->
+
+       <div class="col s12 m6">
+
+        <div id="recentUploads">
+          <div class="first-content">
+            <h4>Videos Uploaded</h4>
+            <p id="empty">No videos uploaded yet</p>
+            <ul id="uploads" class="collection"></ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- end row -->
+
+  </div><!-- end container -->
+
+  <!-- Javascript Imports -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>

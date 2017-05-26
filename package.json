@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/JacobHsu/youtube-api-upload#readme",
   "dependencies": {
+    "express": "^4.15.3",
     "googleapis": "^19.0.0"
   },
   "devDependencies": {

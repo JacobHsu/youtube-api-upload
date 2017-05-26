@@ -11,11 +11,6 @@ const Youtube = require("../lib")
 
 const CREDENTIALS = readJson(`${__dirname}/client_secret.json`);
 
-let server = new Lien({
-    host: "localhost"
-  , port: 5000
-});
-
 let oauth = Youtube.authenticate({
     type: "oauth"
   , client_id: CREDENTIALS.web.client_id
@@ -23,14 +18,19 @@ let oauth = Youtube.authenticate({
   , redirect_url: CREDENTIALS.web.redirect_uris[0]
 });
 
-
 //https://github.com/google/google-api-nodejs-client
-opn(oauth.generateAuthUrl({
+let url = oauth.generateAuthUrl({
     access_type: "offline"
   , scope: ["https://www.googleapis.com/auth/youtube.upload"]
-}));
+});
+opn(url);
 
 // Handle oauth2 callback
+let server = new Lien({
+    host: "localhost"
+  , port: 5000
+});
+
 server.addPage("/oauth2callback", lien => {
     Logger.log("Trying to get the token using the following code: " + lien.query.code);
     // Retrieve access token
